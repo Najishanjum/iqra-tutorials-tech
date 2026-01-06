@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { Quote } from "lucide-react";
+import founderImage from "@/assets/founder.jpeg";
 
 export const FounderSection = () => {
   const [ref, inView] = useInView({
@@ -49,11 +50,11 @@ export const FounderSection = () => {
                     className="relative z-10"
                   >
                     <div className="w-48 h-48 md:w-56 md:h-56 rounded-full bg-gradient-gold p-1 shadow-gold-glow">
-                      <div className="w-full h-full rounded-full bg-navy flex items-center justify-center">
-                        <span className="text-6xl md:text-7xl font-playfair text-gold font-bold">
-                          MM
-                        </span>
-                      </div>
+                      <img 
+                        src={founderImage} 
+                        alt="Md Masoom - Founder & Tutor"
+                        className="w-full h-full rounded-full object-cover"
+                      />
                     </div>
                   </motion.div>
                 </div>

@@ -13,7 +13,8 @@ import {
 const quickLinks = [
   { name: "About Us", href: "#about" },
   { name: "Courses", href: "#courses" },
-  { name: "Gallery", href: "#gallery" },
+  { name: "Features", href: "/features" },
+  { name: "Gallery", href: "/gallery" },
   { name: "FAQ", href: "#faq" },
   { name: "Contact", href: "#contact" },
 ];
@@ -52,16 +53,33 @@ export const FooterSection = () => {
               Building strong foundations for academic success.
             </p>
             <div className="flex gap-4">
-              {[Facebook, Instagram, Youtube].map((Icon, index) => (
-                <motion.a
-                  key={index}
-                  href="#"
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-gold hover:text-navy-dark transition-colors"
-                >
-                  <Icon className="w-5 h-5" />
-                </motion.a>
-              ))}
+              <motion.a
+                href="https://www.facebook.com/share/1EECSk44rb/"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.1, y: -2 }}
+                className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-gold hover:text-navy-dark transition-colors"
+              >
+                <Facebook className="w-5 h-5" />
+              </motion.a>
+              <motion.a
+                href="https://www.instagram.com/iqratutorial20?igsh=MWszZ2JnMGFoYjR0bA=="
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.1, y: -2 }}
+                className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-gold hover:text-navy-dark transition-colors"
+              >
+                <Instagram className="w-5 h-5" />
+              </motion.a>
+              <motion.a
+                href="https://youtube.com/@iqratutorial-v7h?si=0PBgKUQ98bULCmQC"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.1, y: -2 }}
+                className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center hover:bg-gold hover:text-navy-dark transition-colors"
+              >
+                <Youtube className="w-5 h-5" />
+              </motion.a>
             </div>
           </div>
 
@@ -135,7 +153,7 @@ export const FooterSection = () => {
             © {new Date().getFullYear()} IQRA TUTORIALS. All rights reserved.
           </p>
           <p className="text-primary-foreground/60 text-sm font-inter">
-            Crafted with ❤️ for student success
+            Developed By Najish Anjum
           </p>
         </div>
       </div>
