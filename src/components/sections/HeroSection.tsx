@@ -53,17 +53,6 @@ export const HeroSection = () => {
 
       {/* Main Content */}
       <div className="container-custom relative z-10 text-center text-primary-foreground">
-        <motion.div
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="mb-6"
-        >
-          <span className="inline-block px-6 py-2 rounded-full border border-gold/50 text-gold text-sm font-medium tracking-wider uppercase">
-            Est. 2020 • CBSE & BSEB Board
-          </span>
-        </motion.div>
-
         <motion.h1
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -123,8 +112,7 @@ export const HeroSection = () => {
           </Button>
           <Button
             size="lg"
-            variant="outline"
-            className="border-2 border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 px-8 py-6 text-lg rounded-full backdrop-blur-sm"
+            className="bg-gold/20 border-2 border-gold text-gold hover:bg-gold hover:text-navy-dark px-8 py-6 text-lg rounded-full backdrop-blur-sm transition-all duration-300"
             onClick={() => document.getElementById("courses")?.scrollIntoView({ behavior: "smooth" })}
           >
             Explore Courses
@@ -142,7 +130,6 @@ export const HeroSection = () => {
             { number: "500+", label: "Students" },
             { number: "5+", label: "Years Experience" },
             { number: "95%", label: "Success Rate" },
-            { number: "10+", label: "Expert Faculty" },
           ].map((stat, index) => (
             <div key={index} className="text-center">
               <p className="text-3xl md:text-4xl font-bold text-gold">{stat.number}</p>

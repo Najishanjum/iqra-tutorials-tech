@@ -2,19 +2,23 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, BookOpen, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const navLinks = [
-  { name: "Home", href: "#" },
-  { name: "About", href: "#about" },
-  { name: "Courses", href: "#courses" },
-  { name: "Gallery", href: "#gallery" },
-  { name: "FAQ", href: "#faq" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "#", isRoute: false },
+  { name: "About", href: "#about", isRoute: false },
+  { name: "Courses", href: "#courses", isRoute: false },
+  { name: "Features", href: "/features", isRoute: true },
+  { name: "Gallery", href: "/gallery", isRoute: true },
+  { name: "FAQ", href: "#faq", isRoute: false },
+  { name: "Contact", href: "#contact", isRoute: false },
 ];
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,12 +28,22 @@ export const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToSection = (href: string) => {
+  const handleNavClick = (href: string, isRoute: boolean) => {
     setIsMobileMenuOpen(false);
-    if (href === "#") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
+    if (isRoute) {
+      navigate(href);
+    } else if (href === "#") {
+      if (location.pathname !== "/") {
+        navigate("/");
+      } else {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
     } else {
-      document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+      if (location.pathname !== "/") {
+        navigate("/" + href);
+      } else {
+        document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+      }
     }
   };
 
@@ -49,7 +63,7 @@ export const Navbar = () => {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <button 
-              onClick={() => scrollToSection("#")}
+              onClick={() => handleNavClick("#", false)}
               className="flex items-center gap-3 group"
             >
               <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all ${
@@ -71,7 +85,7 @@ export const Navbar = () => {
               {navLinks.map((link) => (
                 <button
                   key={link.name}
-                  onClick={() => scrollToSection(link.href)}
+                  onClick={() => handleNavClick(link.href, link.isRoute)}
                   className={`font-inter text-sm font-medium transition-colors hover:text-gold ${
                     isScrolled ? "text-foreground" : "text-primary-foreground"
                   }`}
@@ -138,7 +152,7 @@ export const Navbar = () => {
                       initial={{ opacity: 0, x: 20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1 }}
-                      onClick={() => scrollToSection(link.href)}
+                      onClick={() => handleNavClick(link.href, link.isRoute)}
                       className="block w-full text-left font-inter text-lg font-medium text-foreground hover:text-gold transition-colors py-2"
                     >
                       {link.name}

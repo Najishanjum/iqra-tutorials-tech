@@ -22,9 +22,9 @@ const courses = [
   {
     icon: GraduationCap,
     classes: "Class 11",
-    title: "Science & Commerce",
-    description: "Stream-specific coaching for Science and Commerce students with practical applications.",
-    subjects: ["Physics", "Chemistry", "Biology/Maths", "Accountancy", "Economics"],
+    title: "Science Stream",
+    description: "Comprehensive science coaching with practical applications and conceptual clarity.",
+    subjects: ["Physics", "Chemistry", "Biology", "Mathematics"],
     color: "bg-purple-500",
   },
   {

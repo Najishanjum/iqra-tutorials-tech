@@ -6,30 +6,23 @@ import { Quote, ChevronLeft, ChevronRight, Star } from "lucide-react";
 const testimonials = [
   {
     id: 1,
-    name: "Rahul Kumar",
+    name: "Md Najish Anjum",
     role: "Class 12 Student",
-    content: "IQRA TUTORIALS transformed my approach to studies. The conceptual clarity I gained here helped me score 95% in my board exams. Forever grateful!",
-    rating: 5,
-  },
-  {
-    id: 2,
-    name: "Priya Singh",
-    role: "Parent",
-    content: "As a parent, I'm extremely satisfied with the progress my daughter has made. The regular updates and personalized attention are commendable.",
-    rating: 5,
-  },
-  {
-    id: 3,
-    name: "Amit Sharma",
-    role: "Class 10 Student",
     content: "The teachers here don't just teach, they inspire. The doubt-clearing sessions and exam strategies helped me top my class!",
     rating: 5,
   },
   {
-    id: 4,
-    name: "Mrs. Fatima",
+    id: 2,
+    name: "Md Lal Mohammad Quadri",
     role: "Parent",
-    content: "My son was struggling with Mathematics, but after joining IQRA TUTORIALS, his confidence and grades have improved significantly.",
+    content: "My son was struggling with Science subject, but after joining IQRA TUTORIALS, his confidence and grades have improved significantly.",
+    rating: 5,
+  },
+  {
+    id: 3,
+    name: "Shahbaz Raza",
+    role: "Class 12 Student",
+    content: "Before joining IQRA TUTORIALS, I was weak in Physics. The step-by-step teaching made everything simple and interesting.",
     rating: 5,
   },
 ];
